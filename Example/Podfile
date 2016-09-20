@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KDNotification_Example' do
+  pod 'KDNotification', :path => '../'
+
+  target 'KDNotification_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

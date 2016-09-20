@@ -49,7 +49,8 @@ pod "KDNotification"
 
 ## Author
 
-Kéké Dandois, keke.dandois@icloud.com
+Kéké Dandois
+Twitter: @kekedandois
 
 ## License
 

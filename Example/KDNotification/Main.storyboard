@@ -1,27 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="60B-n6-j9K">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--KDNotification-->
         <scene sceneID="wQg-tq-qST">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="KDViewController" sceneMemberID="viewController">
+                <viewController title="KDNotification" id="whP-gf-Uak" customClass="KDViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Aqd-6A-XkH"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlj-xL-Ler">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="85Y-23-7gq"/>
+                                </constraints>
+                                <state key="normal" title="Show Notification"/>
+                                <connections>
+                                    <action selector="pressedShowNotification:" destination="whP-gf-Uak" eventType="touchUpInside" id="UYJ-GV-e4s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0r-Y5-0ut">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CbQ-c8-Ndc"/>
+                                </constraints>
+                                <state key="normal" title="Show Toast"/>
+                                <connections>
+                                    <action selector="pressedShowToastNotification:" destination="whP-gf-Uak" eventType="touchUpInside" id="n5B-ZU-hhs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="Aqd-6A-XkH" secondAttribute="bottom" id="Cc0-dz-cq2"/>
+                            <constraint firstItem="Dlj-xL-Ler" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="Ch8-nF-GRJ"/>
+                            <constraint firstItem="Dlj-xL-Ler" firstAttribute="top" secondItem="v0r-Y5-0ut" secondAttribute="bottom" constant="10" id="EKV-qW-ehK"/>
+                            <constraint firstAttribute="trailing" secondItem="v0r-Y5-0ut" secondAttribute="trailing" id="J6f-mP-vXH"/>
+                            <constraint firstItem="Aqd-6A-XkH" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="NOV-wk-24S"/>
+                            <constraint firstItem="v0r-Y5-0ut" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="Nv7-9j-veS"/>
+                            <constraint firstAttribute="trailing" secondItem="Aqd-6A-XkH" secondAttribute="trailing" id="ZKs-JZ-hhk"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="Dlj-xL-Ler" secondAttribute="bottom" constant="260" id="nbS-i0-mMM"/>
+                            <constraint firstAttribute="trailing" secondItem="Dlj-xL-Ler" secondAttribute="trailing" id="rxW-By-e3j"/>
+                            <constraint firstItem="Aqd-6A-XkH" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="wI9-Ef-fTk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="KDNotification" id="MIK-PP-mBR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="1244" y="432.23388305847078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="14c-uw-rWq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="60B-n6-j9K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Iv9-LI-zXp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="WuT-dD-eA4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nPM-4L-XUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="750" height="1334"/>
+    </resources>
 </document>

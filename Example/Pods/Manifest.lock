@@ -1,0 +1,16 @@
+PODS:
+  - KDNotification (0.1.0)
+
+DEPENDENCIES:
+  - KDNotification (from `../`)
+
+EXTERNAL SOURCES:
+  KDNotification:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KDNotification: ff0caf827ea867b6134253446c83f247915b16c4
+
+PODFILE CHECKSUM: 6638efdd769fd41ad912d527486bc8d0063606a9
+
+COCOAPODS: 1.1.0.rc.2

@@ -1,0 +1,6 @@
+framework module KDNotification {
+  umbrella header "KDNotification-umbrella.h"
+
+  export *
+  module * { export * }
+}

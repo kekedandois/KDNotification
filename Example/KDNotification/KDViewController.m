@@ -7,6 +7,8 @@
 //
 
 #import "KDViewController.h"
+#import <KDNotification/KDNotification.h>
+#import <KDNotification/KDToastNotification.h>
 
 @interface KDViewController ()
 
@@ -17,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -24,6 +27,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)pressedShowNotification:(id)sender
+{
+    [KDNotification showWithText:@"This is a test notification. And what a long text I contain." duration:3.0 tapped:^(KDNotification *notification) {
+        NSLog(@"tapped notification");
+    }];
+}
+
+- (IBAction)pressedShowToastNotification:(id)sender
+{
+    [KDToastNotification showWithText:@"this is a toast. Who has the butter?" duration:3.0 tapped:^(KDNotification *notification) {
+        NSLog(@"tapped toast");
+    }];
 }
 
 @end

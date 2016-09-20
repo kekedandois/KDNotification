@@ -1,0 +1,6 @@
+framework module Pods_KDNotification_Tests {
+  umbrella header "Pods-KDNotification_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

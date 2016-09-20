@@ -1,0 +1,27 @@
+{
+  "name": "KDNotification",
+  "version": "0.1.0",
+  "summary": "A short description of KDNotification.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/KDNotification",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Kéké Dandois": "keke.dandois@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/kekedandois/KDNotification.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "KDNotification/Classes/**/*.{h,m}",
+  "resource_bundles": {
+    "KDNotification": [
+      "KDNotification/Classes/**/*.{xib}"
+    ]
+  }
+}

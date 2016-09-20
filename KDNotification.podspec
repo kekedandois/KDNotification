@@ -21,7 +21,7 @@ KDNotification is a lightweight framework to show and interact with notification
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Kéké Dandois' => 'keke.dandois@icloud.com' }
   s.source           = { :git => 'https://github.com/kekedandois/KDNotification.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/kekedandois'
+  s.social_media_url = 'https://twitter.com/kekedandois'
 
   s.ios.deployment_target = '8.0'
 

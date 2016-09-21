@@ -9,6 +9,7 @@
 #import "KDNotification.h"
 
 static KDNotification *currentNotification = nil;
+static UIBlurEffectStyle *blurEffectStyle = UIBlurEffectStyleLight;
 
 @interface KDNotification ()
 
@@ -23,6 +24,12 @@ static KDNotification *currentNotification = nil;
 @implementation KDNotification
 
 #pragma mark - Constructors
+
++ (void) setNotificionStyle:(UIBlurEffectStyle)style
+{
+    blurEffectStyle = style;
+}
+
 + (instancetype) notification
 {
     KDNotification *notification = [[[self bundle] loadNibNamed:NSStringFromClass([self class])
@@ -54,7 +61,7 @@ static KDNotification *currentNotification = nil;
 
 - (void) setup
 {
-    self.effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    self.effect = [UIBlurEffect effectWithStyle:blurEffectStyle];
     self.layoutMargins = UIEdgeInsetsZero;
     self.contentView.layoutMargins = UIEdgeInsetsZero;
     self.translatesAutoresizingMaskIntoConstraints = false;
@@ -64,6 +71,9 @@ static KDNotification *currentNotification = nil;
 
 - (void) styleNotification
 {
+    UIColor *textColor = blurEffectStyle == UIBlurEffectStyleDark ? [UIColor whiteColor] : [UIColor blackColor];
+    self.titleLabel.textColor = textColor;
+    self.textLabel.textColor = textColor;
     self.titleLabel.text = [self appName];
     self.appIcon.image = [self appIconImage];
     self.appIcon.layer.cornerRadius = 4.0;

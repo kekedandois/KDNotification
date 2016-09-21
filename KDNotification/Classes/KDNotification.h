@@ -10,6 +10,8 @@
 
 @interface KDNotification : UIVisualEffectView
 
++ (void) setNotificionStyle:(UIBlurEffectStyle)style;
+
 + (instancetype) showWithText:(NSString *)text tapped:(void(^)(KDNotification*))tapped;
 + (instancetype) showWithText:(NSString *)text duration:(NSTimeInterval)duration tapped:(void(^)(KDNotification*))tapped;
 

@@ -9,7 +9,7 @@
 #import "KDNotification.h"
 
 static KDNotification *currentNotification = nil;
-static UIBlurEffectStyle *blurEffectStyle = UIBlurEffectStyleLight;
+static UIBlurEffectStyle blurEffectStyle = UIBlurEffectStyleLight;
 
 @interface KDNotification ()
 

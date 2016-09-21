@@ -16,14 +16,14 @@ KDNotification is a lightweight framework to show and interact with notification
 #####Notifications:
 
 ```ruby
-    [KDNotification showWithText:@"PING" duration:3.0 tapped:^(KDNotification *notification) {
+    [KDNotification showWithText:@"PING" duration:3.0 tapped:^ {
         NSLog(@"tapped notification");
     }];
 ```
 #####Toasts:
 
 ```ruby
-    [KDToastNotification showWithText:@"this is a toast. Who has the butter?" duration:3.0 tapped:^(KDNotification *notification) {
+    [KDToastNotification showWithText:@"this is a toast. Who has the butter?" duration:3.0 tapped:^ {
         NSLog(@"tapped toast");
     }];
     

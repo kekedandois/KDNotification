@@ -17,7 +17,7 @@ static UIBlurEffectStyle blurEffectStyle = UIBlurEffectStyleLight;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (strong, nonatomic) NSLayoutConstraint *animateConstraint;
-@property (assign, nonatomic) void(^tapped)(KDNotification*);
+@property (copy, nonatomic, nullable) KDNotificationTapped tapped;
 
 @end
 
@@ -92,13 +92,13 @@ static UIBlurEffectStyle blurEffectStyle = UIBlurEffectStyleLight;
 {
     if (self.tapped)
     {
-        self.tapped(self);
+        self.tapped();
     }
     
     [self dismiss];
 }
 
-+ (instancetype) showWithText:(NSString *)text tapped:(void(^)(KDNotification*))tapped
++ (instancetype) showWithText:(NSString *)text tapped:(KDNotificationTapped)tapped
 {
     if (currentNotification) {
         [currentNotification dismiss];
@@ -121,7 +121,7 @@ static UIBlurEffectStyle blurEffectStyle = UIBlurEffectStyleLight;
     return notification;
 }
 
-+ (instancetype) showWithText:(NSString *)text duration:(NSTimeInterval)duration tapped:(void(^)(KDNotification*))tapped
++ (instancetype) showWithText:(NSString *)text duration:(NSTimeInterval)duration tapped:(KDNotificationTapped)tapped
 {
     KDNotification *notification = [self showWithText:text tapped:tapped];
     

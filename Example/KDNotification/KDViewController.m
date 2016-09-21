@@ -30,14 +30,14 @@
 }
 - (IBAction)pressedShowNotification:(id)sender
 {
-    [KDNotification showWithText:@"This is a test notification. And what a long text I contain." duration:3.0 tapped:^(KDNotification *notification) {
+    [KDNotification showWithText:@"This is a test notification. And what a long text I contain." duration:3.0 tapped:^{
         NSLog(@"tapped notification");
     }];
 }
 
 - (IBAction)pressedShowToastNotification:(id)sender
 {
-    [KDToastNotification showWithText:@"this is a toast. Who has the butter?" duration:3.0 tapped:^(KDNotification *notification) {
+    [KDToastNotification showWithText:@"this is a toast. Who has the butter?" duration:3.0 tapped:^{
         NSLog(@"tapped toast");
     }];
 }

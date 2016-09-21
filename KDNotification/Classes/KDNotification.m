@@ -161,6 +161,7 @@ static UIBlurEffectStyle blurEffectStyle = UIBlurEffectStyleLight;
         if (currentNotification == self) {
             currentNotification = nil;
         }
+        [self removeFromSuperview];
     }];
  
 }

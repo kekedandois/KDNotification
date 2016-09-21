@@ -106,7 +106,7 @@ static UIBlurEffectStyle blurEffectStyle = UIBlurEffectStyleLight;
 
     KDNotification *notification = [self notification];
 
-    [[self notificationWindow].rootViewController.view addSubview:notification];
+    [[self notificationWindow] addSubview:notification];
 
     notification.tapped = tapped;
     notification.textLabel.text = text;
